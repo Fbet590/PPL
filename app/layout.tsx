@@ -50,7 +50,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <body className={`${montserrat.variable} ${playfair.variable} ${poppins.variable} font-sans antialiased`}>
+        {children}
         {/* Facebook Pixel */}
         <Script id="facebook-pixel" strategy="afterInteractive">
           {`
@@ -67,17 +68,15 @@ export default function RootLayout({
           `}
         </Script>
         <noscript>
-          <img 
-            height="1" 
-            width="1" 
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            height="1"
+            width="1"
             style={{ display: 'none' }}
             src="https://www.facebook.com/tr?id=1239713028184483&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>
-      </head>
-      <body className={`${montserrat.variable} ${playfair.variable} ${poppins.variable} font-sans antialiased`}>
-        {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

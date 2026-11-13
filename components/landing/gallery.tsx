@@ -36,6 +36,60 @@ const projects = [
     category: "Artificial Turf",
     location: "Chandler, AZ",
   },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Luxurious%20Poolside%20Putting%20Green%20Backyard-Lgg5Rg53QIkxj3hSdS0Cx85B1GLKCG.png",
+    title: "Luxurious Poolside Putting Green",
+    category: "Putting Greens",
+    location: "Arizona",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Modern%20Geometric%20Pool%20Retreat-vDNSZvETToZ083JFtvPiPyCrqdeYCc.png",
+    title: "Modern Geometric Pool Retreat",
+    category: "Poolscapes",
+    location: "Arizona",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Modern%20Backyard%20Putting%20Green%20Oasis-13scPHUZ8d9XGkSq5FeK3FZ9Pyfm2e.png",
+    title: "Modern Backyard Putting Green Oasis",
+    category: "Putting Greens",
+    location: "Arizona",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Modern%20Pergola%20Patio%20and%20Outdoor%20Kitchen-Zpy93187xCdsSov9e56hVXY9HgbO81.png",
+    title: "Modern Pergola Patio & Outdoor Kitchen",
+    category: "Pergolas",
+    location: "Arizona",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Modern%20Mountain%20Lodge%20Backyard-NbmeeEeYElkscdzqPAAiMPMmFmLZor.png",
+    title: "Modern Mountain Lodge Backyard",
+    category: "Artificial Turf",
+    location: "Arizona",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Modern%20Pergola%20Patio%20Retreat%20copy-Rns5d01rMBer0Yj67AEL3pST9qyv7C.png",
+    title: "Modern Pergola Patio Retreat",
+    category: "Pergolas",
+    location: "Arizona",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tree-Shaded%20Courtyard%20Landscape.png-R96uuYKYil8SHwzISI3N6a0nfmqP2m.webp",
+    title: "Tree-Shaded Courtyard Landscape",
+    category: "Landscape Design",
+    location: "Arizona",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Backyard%20Putting%20Green%20Oasis-pKBbXb491BVQpSqzg4opjX8DDoAnhV.png",
+    title: "Backyard Putting Green Oasis",
+    category: "Putting Greens",
+    location: "Arizona",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aerial%20View%20of%20Backyard%20Oasis-34HlyMKVhJu8tsVpk13MUfskRefFQX.png",
+    title: "Aerial View of Backyard Oasis",
+    category: "Full Landscape",
+    location: "Arizona",
+  },
 ]
 
 export function Gallery() {
