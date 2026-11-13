@@ -236,7 +236,7 @@ export function Hero() {
             <div className="text-primary-foreground lg:col-span-3">
               <h1 className="font-[family-name:var(--font-poppins)] text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-balance">
                 No More Looking at an Ugly Backyard!{" "}
-                <span className="text-[#FB9109]">Transform it, in YOUR way.</span>
+                <span className="text-[#FB9109]">Transform it, YOUR way.</span>
               </h1>
               <p className="mt-6 text-lg md:text-xl opacity-90 leading-relaxed max-w-xl">
                 No more, no less. See if your project fits the scope.
