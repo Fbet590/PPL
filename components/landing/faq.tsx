@@ -25,11 +25,6 @@ const faqs = [
     answer:
       "We serve the entire Phoenix metropolitan area including Scottsdale, Mesa, Gilbert, Chandler, Tempe, Paradise Valley, Cave Creek, and surrounding communities. If you're unsure if we service your area, just give us a call!",
   },
-  {
-    question: "What kind of warranty do you offer?",
-    answer:
-      "We stand behind our work with comprehensive warranties. Our installation workmanship is covered for 5 years, and many materials come with manufacturer warranties up to 10+ years. We'll explain all warranty details during your project planning.",
-  },
 ]
 
 export function FAQ() {
