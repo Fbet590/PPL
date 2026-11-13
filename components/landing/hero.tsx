@@ -6,6 +6,7 @@ import { CheckCircle2, Shield, Award, FileCheck, ArrowRight, ArrowLeft } from "l
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
+import { BudgetSlider, BUDGET_MIN, formatBudget } from "@/components/landing/budget-slider"
 
 const badges = [
   { icon: Shield, label: "Licensed" },
@@ -13,11 +14,12 @@ const badges = [
   { icon: FileCheck, label: "Insured" },
 ]
 
-const projectOptions = ["Turf", "Pavers", "Plants", "Decorative Rock", "Drip Irrigation"]
+const projectOptions = ["Turf", "Pavers", "Plants", "Decorative Rock", "Drip Irrigation", "Pergola"]
 
 const formSteps = [
   { field: "options", label: "What options would you like for your project?", placeholder: "", type: "options" },
   { field: "name", label: "What's your name?", placeholder: "Enter your name", type: "text" },
+  { field: "budget", label: "What's your budget for this project?", placeholder: "", type: "budget" },
   { field: "phone", label: "What's your phone number?", placeholder: "Enter your phone number", type: "tel" },
   { field: "email", label: "What's your email?", placeholder: "Enter your email address", type: "email" },
   { field: "multipleBids", label: "Would you like more than one bid for this project?", placeholder: "", type: "choice" },
@@ -79,6 +81,7 @@ export function Hero() {
     phone: "",
     email: "",
     options: [] as string[],
+    budget: BUDGET_MIN,
     multipleBids: "",
   })
   const [currentStep, setCurrentStep] = useState(0)
@@ -152,6 +155,8 @@ export function Hero() {
       phone: formData.phone.replace(/\D/g, ""), // Send clean phone number
       email: formData.email,
       projectOptions: formData.options.join(", "),
+      budget: formData.budget,
+      budgetLabel: formatBudget(formData.budget),
       multipleBids: formData.multipleBids,
       source: "Platinum AZ Turf Landing Page",
       offer: "$9.5k Flat Rate Package",
@@ -187,12 +192,16 @@ export function Hero() {
 
   const currentField = formSteps[currentStep]
   const isLastStep = currentStep === formSteps.length - 1
-  const currentValue = currentField.field === "options" 
-    ? formData.options.join(", ")
-    : formData[currentField.field as keyof Omit<typeof formData, "options">]
-  const canProceed = currentField.field === "options" 
-    ? formData.options.length > 0 
-    : currentValue.trim() !== ""
+  const currentValue =
+    currentField.field === "options" || currentField.field === "budget"
+      ? ""
+      : formData[currentField.field as "name" | "phone" | "email" | "multipleBids"]
+  const canProceed =
+    currentField.field === "options"
+      ? formData.options.length > 0
+      : currentField.field === "budget"
+        ? true
+        : currentValue.trim() !== ""
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && canProceed) {
@@ -227,7 +236,7 @@ export function Hero() {
             <div className="text-primary-foreground lg:col-span-3">
               <h1 className="font-[family-name:var(--font-poppins)] text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-balance">
                 No More Looking at an Ugly Backyard!{" "}
-                <span className="text-[#FB9109]">Fix it for $9,500 Flat.</span>
+                <span className="text-[#FB9109]">Transform it, YOUR way.</span>
               </h1>
               <p className="mt-6 text-lg md:text-xl opacity-90 leading-relaxed max-w-xl">
                 No more, no less. See if your project fits the scope.
@@ -262,13 +271,13 @@ export function Hero() {
                 {/* Form Header */}
                 <div className="text-center mb-5">
                   <p className="font-[family-name:var(--font-poppins)] text-base md:text-lg font-extrabold text-foreground tracking-wide uppercase mb-2">
-                    GET THE BACKYARD MAKE OVER. FINAL PRICE? $9,500.
+                    GET THE BACKYARD MAKE OVER.
                   </p>
                   <h2 className="font-[family-name:var(--font-poppins)] text-lg font-bold text-foreground">
                     <span className="text-[#FB9109]">Not Every Home Qualifies.</span> Yours Might.
                   </h2>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Fill out the form below and find out if your space is a fit for our $9.5k flat rate package.
+                    Fill out the form below and we'll do the rest!
                   </p>
                 </div>
 
@@ -333,6 +342,11 @@ export function Hero() {
                           )
                         })}
                       </div>
+                    ) : currentField.type === "budget" ? (
+                      <BudgetSlider
+                        value={formData.budget}
+                        onChange={(budget) => setFormData((prev) => ({ ...prev, budget }))}
+                      />
                     ) : currentField.type === "choice" ? (
                       <div className="grid grid-cols-2 gap-3">
                         {bidOptions.map((option) => {
