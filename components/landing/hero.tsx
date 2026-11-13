@@ -25,7 +25,7 @@ const formSteps = [
   { field: "multipleBids", label: "Would you like more than one bid for this project?", placeholder: "", type: "choice" },
 ]
 
-const bidOptions = ["Yes (Multiple bids is better)", "No (I only want a bid from 1 company)"]
+const bidOptions = ["Yes (Multiple bids is better)", "No (I only need a bid from 1 company)"]
 
 // Validation functions
 const validatePhone = (phone: string): boolean => {

@@ -4,7 +4,7 @@ import { useCallback, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
 export const BUDGET_MIN = 7000
-export const BUDGET_MAX = 75000
+export const BUDGET_MAX = 30000
 export const BUDGET_STEP = 1000
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
