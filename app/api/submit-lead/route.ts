@@ -1,5 +1,27 @@
 import { NextResponse } from "next/server"
 
+// Project answers in the order the form asks them; contact fields and the
+// multiple-bids answer are intentionally excluded.
+function buildProjectDetails(leadData: Record<string, unknown>): string {
+  const toText = (value: unknown): string => {
+    if (Array.isArray(value)) {
+      return value.map((item) => String(item).trim()).filter(Boolean).join(", ")
+    }
+    if (typeof value === "string") return value.trim()
+    return ""
+  }
+
+  const answers: Array<[string, string]> = [
+    ["Options", toText(leadData.projectOptions)],
+    ["Budget", toText(leadData.budgetLabel)],
+  ]
+
+  return answers
+    .filter(([, answer]) => answer !== "")
+    .map(([label, answer]) => `${label}: ${answer}`)
+    .join("\n")
+}
+
 export async function POST(request: Request) {
   try {
     const leadData = await request.json()
@@ -12,6 +34,12 @@ export async function POST(request: Request) {
       timestamp: new Date().toISOString(),
     }
 
+    // GoHighLevel gets one extra key; every existing key is left untouched
+    const ghlPayload = {
+      ...dataWithTimestamp,
+      projectDetails: buildProjectDetails(leadData),
+    }
+
     // Send to both webhooks in parallel from server-side (no CORS issues)
     const results = await Promise.allSettled([
       // GoHighLevel webhook
@@ -20,7 +48,7 @@ export async function POST(request: Request) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(dataWithTimestamp),
+        body: JSON.stringify(ghlPayload),
       }).then(async (res) => {
         const text = await res.text().catch(() => "")
         console.log("[v0] GoHighLevel response:", res.status, text)
