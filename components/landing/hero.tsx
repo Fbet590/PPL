@@ -275,18 +275,20 @@ export function Hero() {
           <div className="bg-card rounded-xl shadow-2xl p-5 md:p-6 max-w-sm mx-auto border-4 border-[#FB9109] overflow-hidden">
             {!isSubmitted ? (
               <div className="relative">
-                {/* Form Header */}
-                <div className="text-center mb-5">
-                  <p className="font-[family-name:var(--font-poppins)] text-base md:text-lg font-extrabold text-foreground tracking-wide uppercase mb-2">
-                    GET THE BACKYARD MAKE OVER.
-                  </p>
-                  <h2 className="font-[family-name:var(--font-poppins)] text-lg font-bold text-foreground">
-                    <span className="text-[#FB9109]">Not Every Home Qualifies.</span> Yours Might.
-                  </h2>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Fill out the form below and we'll do the rest!
-                  </p>
-                </div>
+                {/* Form Header (first step only) */}
+                {currentStep === 0 && (
+                  <div className="text-center mb-5">
+                    <p className="font-[family-name:var(--font-poppins)] text-base md:text-lg font-extrabold text-foreground tracking-wide uppercase mb-2">
+                      GET THE BACKYARD MAKE OVER.
+                    </p>
+                    <h2 className="font-[family-name:var(--font-poppins)] text-lg font-bold text-foreground">
+                      <span className="text-[#FB9109]">Not Every Home Qualifies.</span> Yours Might.
+                    </h2>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Fill out the form below and we'll do the rest!
+                    </p>
+                  </div>
+                )}
 
                 {/* Progress Indicator */}
                 <div className="flex gap-2 mb-4">
@@ -301,10 +303,12 @@ export function Hero() {
                   ))}
                 </div>
 
-                {/* Step Counter */}
-                <div className="text-xs text-muted-foreground mb-2">
-                  Step {currentStep + 1} of {formSteps.length}
-                </div>
+                {/* Step Counter (first step only) */}
+                {currentStep === 0 && (
+                  <div className="text-xs text-muted-foreground mb-2">
+                    Step {currentStep + 1} of {formSteps.length}
+                  </div>
+                )}
 
                 {/* Question */}
                 <h2
