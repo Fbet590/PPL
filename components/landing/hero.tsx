@@ -272,7 +272,7 @@ export function Hero() {
       {/* Lead Capture Form - Overlapping */}
       <div className="relative z-20 -mt-24 lg:-mt-32 pb-12">
         <div className="container mx-auto px-4">
-          <div className="bg-card rounded-xl shadow-2xl p-5 md:p-6 max-w-sm mx-auto border-2 border-[#FB9109] overflow-hidden">
+          <div className="bg-card rounded-xl shadow-2xl p-5 md:p-6 max-w-sm mx-auto border-4 border-[#FB9109] overflow-hidden">
             {!isSubmitted ? (
               <div className="relative">
                 {/* Form Header */}
