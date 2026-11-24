@@ -310,7 +310,11 @@ export function Hero() {
                 <h2
                   className={cn(
                     "font-serif text-xl font-bold text-foreground",
-                    currentField.type === "budget" ? "mb-1" : "mb-4"
+                    currentField.type === "budget"
+                      ? "mb-1"
+                      : currentField.type === "choice"
+                        ? "mb-0"
+                        : "mb-4"
                   )}
                 >
                   {currentField.label}
@@ -359,10 +363,7 @@ export function Hero() {
                         <p className="text-sm text-muted-foreground">
                           Select the range that fits your project
                         </p>
-                        <p className="mt-[12px] mb-[20px] rounded-[8px] bg-[#FEF3C7] border-l-4 border-l-[#F59E0B] py-[12px] px-[16px] text-left text-[16px] md:text-[20px] font-medium leading-snug text-[#92400E]">
-                          Other bids may have different pricing
-                        </p>
-                        <div className="flex flex-col gap-3">
+                        <div className="mt-4 flex flex-col gap-3">
                           {budgetOptions.map((option) => {
                             const isSelected = formData.budget === option
                             return (
@@ -388,6 +389,10 @@ export function Hero() {
                         </div>
                       </div>
                     ) : currentField.type === "choice" ? (
+                      <div>
+                        <p className="mt-[12px] mb-[20px] rounded-[8px] bg-[#FEF3C7] border-l-4 border-l-[#F59E0B] py-[12px] px-[16px] text-left text-[16px] md:text-[20px] font-medium leading-snug text-[#92400E]">
+                          Other bids may have different pricing
+                        </p>
                       <div className="grid grid-cols-2 gap-3">
                         {bidOptions.map((option) => {
                           const isSelected = formData.multipleBids === option
@@ -411,6 +416,7 @@ export function Hero() {
                             </button>
                           )
                         })}
+                      </div>
                       </div>
                     ) : (
                       <Input
