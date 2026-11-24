@@ -6,7 +6,6 @@ import { CheckCircle2, Shield, Award, FileCheck, ArrowRight, ArrowLeft } from "l
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
-import { BudgetSlider, BUDGET_MIN, formatBudget } from "@/components/landing/budget-slider"
 
 const badges = [
   { icon: Shield, label: "Licensed" },
@@ -18,12 +17,14 @@ const projectOptions = ["Turf", "Pavers", "Plants", "Decorative Rock", "Drip Irr
 
 const formSteps = [
   { field: "options", label: "What options would you like for your project?", placeholder: "", type: "options" },
+  { field: "budget", label: "What's your approximate budget?", placeholder: "", type: "budget" },
   { field: "name", label: "What's your name?", placeholder: "Enter your name", type: "text" },
-  { field: "budget", label: "What's your budget for this project?", placeholder: "", type: "budget" },
-  { field: "phone", label: "What's your phone number?", placeholder: "Enter your phone number", type: "tel" },
   { field: "email", label: "What's your email?", placeholder: "Enter your email address", type: "email" },
+  { field: "phone", label: "What's your phone number?", placeholder: "Enter your phone number", type: "tel" },
   { field: "multipleBids", label: "Would you like more than one bid for this project?", placeholder: "", type: "choice" },
 ]
+
+const budgetOptions = ["$10,000 - $15,000", "$15,000 - $25,000", "$25,000 - $40,000", "$40,000 +"]
 
 const bidOptions = ["Yes (Multiple bids is better)", "No (I only need a bid from 1 company)"]
 
@@ -81,7 +82,7 @@ export function Hero() {
     phone: "",
     email: "",
     options: [] as string[],
-    budget: BUDGET_MIN,
+    budget: "",
     multipleBids: "",
   })
   const [currentStep, setCurrentStep] = useState(0)
@@ -115,6 +116,12 @@ export function Hero() {
       case "multipleBids":
         if (!formData.multipleBids) {
           setValidationError("Please select yes or no")
+          return false
+        }
+        break
+      case "budget":
+        if (!formData.budget) {
+          setValidationError("Please select a budget range")
           return false
         }
         break
@@ -156,7 +163,7 @@ export function Hero() {
       email: formData.email,
       projectOptions: formData.options.join(", "),
       budget: formData.budget,
-      budgetLabel: formatBudget(formData.budget),
+      budgetLabel: formData.budget,
       multipleBids: formData.multipleBids,
       source: "Platinum AZ Turf Landing Page",
       offer: "$9.5k Flat Rate Package",
@@ -200,7 +207,7 @@ export function Hero() {
     currentField.field === "options"
       ? formData.options.length > 0
       : currentField.field === "budget"
-        ? true
+        ? formData.budget !== ""
         : currentValue.trim() !== ""
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -300,7 +307,16 @@ export function Hero() {
                 </div>
 
                 {/* Question */}
-                <h2 className="font-serif text-xl font-bold text-foreground mb-4">
+                <h2
+                  className={cn(
+                    "font-[family-name:var(--font-poppins)] text-xl font-bold text-foreground",
+                    currentField.type === "budget"
+                      ? "mb-1"
+                      : currentField.type === "choice"
+                        ? "mb-0"
+                        : "mb-4"
+                  )}
+                >
                   {currentField.label}
                 </h2>
 
@@ -343,11 +359,40 @@ export function Hero() {
                         })}
                       </div>
                     ) : currentField.type === "budget" ? (
-                      <BudgetSlider
-                        value={formData.budget}
-                        onChange={(budget) => setFormData((prev) => ({ ...prev, budget }))}
-                      />
+                      <div>
+                        <p className="text-sm text-muted-foreground">
+                          Select the range that fits your project
+                        </p>
+                        <div className="mt-4 flex flex-col gap-3">
+                          {budgetOptions.map((option) => {
+                            const isSelected = formData.budget === option
+                            return (
+                              <button
+                                key={option}
+                                type="button"
+                                aria-pressed={isSelected}
+                                onClick={() => {
+                                  setValidationError(null)
+                                  setFormData({ ...formData, budget: option })
+                                }}
+                                className={cn(
+                                  "w-full text-left p-3 rounded-lg border-2 text-sm font-medium transition-all",
+                                  isSelected
+                                    ? "border-accent bg-accent/10 text-accent"
+                                    : "border-border hover:border-accent/50 text-foreground"
+                                )}
+                              >
+                                {option}
+                              </button>
+                            )
+                          })}
+                        </div>
+                      </div>
                     ) : currentField.type === "choice" ? (
+                      <div>
+                        <p className="mt-[12px] mb-[20px] rounded-[8px] bg-[#FEF3C7] border-l-4 border-l-[#F59E0B] py-[12px] px-[16px] text-left text-[16px] md:text-[20px] font-medium leading-snug text-[#92400E]">
+                          Other bids may have different pricing
+                        </p>
                       <div className="grid grid-cols-2 gap-3">
                         {bidOptions.map((option) => {
                           const isSelected = formData.multipleBids === option
@@ -371,6 +416,7 @@ export function Hero() {
                             </button>
                           )
                         })}
+                      </div>
                       </div>
                     ) : (
                       <Input
@@ -438,7 +484,7 @@ export function Hero() {
                 <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
                   <CheckCircle2 className="h-6 w-6 text-secondary-foreground" />
                 </div>
-                <h3 className="font-serif text-xl font-bold text-foreground">
+                <h3 className="font-[family-name:var(--font-poppins)] text-xl font-bold text-foreground">
                   Thank You!
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
