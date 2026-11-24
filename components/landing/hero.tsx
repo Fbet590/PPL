@@ -309,7 +309,7 @@ export function Hero() {
                 {/* Question */}
                 <h2
                   className={cn(
-                    "font-serif text-xl font-bold text-foreground",
+                    "font-[family-name:var(--font-poppins)] text-xl font-bold text-foreground",
                     currentField.type === "budget"
                       ? "mb-1"
                       : currentField.type === "choice"
@@ -484,7 +484,7 @@ export function Hero() {
                 <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
                   <CheckCircle2 className="h-6 w-6 text-secondary-foreground" />
                 </div>
-                <h3 className="font-serif text-xl font-bold text-foreground">
+                <h3 className="font-[family-name:var(--font-poppins)] text-xl font-bold text-foreground">
                   Thank You!
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
