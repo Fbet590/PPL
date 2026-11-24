@@ -7,85 +7,99 @@ import { cn } from "@/lib/utils"
 
 const projects = [
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_aval6aaval6aaval.png-mLDtyjBTKBYjhc1vWWYuN9pvhwxJLQ.jpeg",
+    src: "/gallery/01.webp",
+    thumb: "/gallery/01-thumb.webp",
     title: "Sunset Pergola & Outdoor Kitchen",
     category: "Full Landscape",
     location: "Scottsdale, AZ",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_hr014uhr014uhr01.png-apEwcFg7Z4rUFl3C0y7sPVijqNcdvC.jpeg",
+    src: "/gallery/02.webp",
+    thumb: "/gallery/02-thumb.webp",
     title: "L-Shaped Outdoor Kitchen",
     category: "Outdoor Kitchens",
     location: "Paradise Valley, AZ",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_z26m1kz26m1kz26m.png-MwHMc2NuFgJUbgwj7rmBOz5R3XhzU8.jpeg",
+    src: "/gallery/03.webp",
+    thumb: "/gallery/03-thumb.webp",
     title: "Outdoor Kitchen at Night",
     category: "Outdoor Kitchens",
     location: "Mesa, AZ",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_nlv8jtnlv8jtnlv8.png-mMJ68nWSl8zavluNP7PS76ImtGxncA.jpeg",
+    src: "/gallery/04.webp",
+    thumb: "/gallery/04-thumb.webp",
     title: "Modern Pergola Lounge",
     category: "Pergolas",
     location: "Gilbert, AZ",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_l7r1otl7r1otl7r1.png-D4iYGXZx1KqLaEWRsmp73RQaxMKnqk.jpeg",
+    src: "/gallery/05.webp",
+    thumb: "/gallery/05-thumb.webp",
     title: "Pet-Friendly Turf Installation",
     category: "Artificial Turf",
     location: "Chandler, AZ",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Luxurious%20Poolside%20Putting%20Green%20Backyard-Lgg5Rg53QIkxj3hSdS0Cx85B1GLKCG.png",
+    src: "/gallery/06.webp",
+    thumb: "/gallery/06-thumb.webp",
     title: "Luxurious Poolside Putting Green",
     category: "Putting Greens",
     location: "Arizona",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Modern%20Geometric%20Pool%20Retreat-vDNSZvETToZ083JFtvPiPyCrqdeYCc.png",
+    src: "/gallery/07.webp",
+    thumb: "/gallery/07-thumb.webp",
     title: "Modern Geometric Pool Retreat",
     category: "Poolscapes",
     location: "Arizona",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Modern%20Backyard%20Putting%20Green%20Oasis-13scPHUZ8d9XGkSq5FeK3FZ9Pyfm2e.png",
+    src: "/gallery/08.webp",
+    thumb: "/gallery/08-thumb.webp",
     title: "Modern Backyard Putting Green Oasis",
     category: "Putting Greens",
     location: "Arizona",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Modern%20Pergola%20Patio%20and%20Outdoor%20Kitchen-Zpy93187xCdsSov9e56hVXY9HgbO81.png",
+    src: "/gallery/09.webp",
+    thumb: "/gallery/09-thumb.webp",
     title: "Modern Pergola Patio & Outdoor Kitchen",
     category: "Pergolas",
     location: "Arizona",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Modern%20Mountain%20Lodge%20Backyard-NbmeeEeYElkscdzqPAAiMPMmFmLZor.png",
+    src: "/gallery/10.webp",
+    thumb: "/gallery/10-thumb.webp",
     title: "Modern Mountain Lodge Backyard",
     category: "Artificial Turf",
     location: "Arizona",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Modern%20Pergola%20Patio%20Retreat%20copy-Rns5d01rMBer0Yj67AEL3pST9qyv7C.png",
+    src: "/gallery/11.webp",
+    thumb: "/gallery/11-thumb.webp",
     title: "Modern Pergola Patio Retreat",
     category: "Pergolas",
     location: "Arizona",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tree-Shaded%20Courtyard%20Landscape.png-R96uuYKYil8SHwzISI3N6a0nfmqP2m.webp",
+    src: "/gallery/12.webp",
+    thumb: "/gallery/12-thumb.webp",
     title: "Tree-Shaded Courtyard Landscape",
     category: "Landscape Design",
     location: "Arizona",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Backyard%20Putting%20Green%20Oasis-pKBbXb491BVQpSqzg4opjX8DDoAnhV.png",
+    src: "/gallery/13.webp",
+    thumb: "/gallery/13-thumb.webp",
     title: "Backyard Putting Green Oasis",
     category: "Putting Greens",
     location: "Arizona",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aerial%20View%20of%20Backyard%20Oasis-34HlyMKVhJu8tsVpk13MUfskRefFQX.png",
+    src: "/gallery/14.webp",
+    thumb: "/gallery/14-thumb.webp",
     title: "Aerial View of Backyard Oasis",
     category: "Full Landscape",
     location: "Arizona",
@@ -161,7 +175,11 @@ export function Gallery() {
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
           >
-            {projects.map((project, index) => (
+            {projects.map((project, index) => {
+              const distance = Math.abs(index - currentIndex)
+              const isNearby = Math.min(distance, projects.length - distance) <= 1
+              if (!isNearby) return null
+              return (
               <div
                 key={index}
                 className={cn(
@@ -173,6 +191,7 @@ export function Gallery() {
                   src={project.src}
                   alt={project.title}
                   fill
+                  sizes="(min-width: 896px) 896px, 100vw"
                   className="object-cover"
                   priority={index === 0}
                 />
@@ -189,7 +208,8 @@ export function Gallery() {
                   <p className="text-sm opacity-80">{project.location}</p>
                 </div>
               </div>
-            ))}
+              )
+            })}
 
             {/* Navigation Arrows */}
             <button
@@ -250,9 +270,10 @@ export function Gallery() {
                 )}
               >
                 <Image
-                  src={project.src}
+                  src={project.thumb}
                   alt={project.title}
                   fill
+                  sizes="96px"
                   className="object-cover"
                 />
               </button>
@@ -305,6 +326,7 @@ export function Gallery() {
               src={projects[currentIndex].src}
               alt={projects[currentIndex].title}
               fill
+              sizes="(min-width: 1024px) 1024px, 100vw"
               className="object-contain"
             />
             <div className="absolute bottom-0 left-0 right-0 p-6 text-center bg-gradient-to-t from-primary/80 to-transparent">

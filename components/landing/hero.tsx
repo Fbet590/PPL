@@ -177,6 +177,7 @@ export function Hero() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(leadData),
+        signal: AbortSignal.timeout(10000),
       })
       
       const result = await response.json()
@@ -228,7 +229,7 @@ export function Hero() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-patio.jpg"
+            src="/images/hero-patio.webp"
             alt="Luxury Arizona backyard with custom hardscaping"
             fill
             className="object-cover"
@@ -351,7 +352,7 @@ export function Hero() {
                                 })
                               }}
                               className={cn(
-                                "p-3 rounded-lg border-2 text-sm font-medium transition-all",
+                                "min-w-0 px-2 py-3 rounded-lg border-2 text-[15px] font-medium transition-all",
                                 isSelected
                                   ? "border-accent bg-accent/10 text-accent"
                                   : "border-border hover:border-accent/50 text-foreground"
@@ -380,7 +381,7 @@ export function Hero() {
                                   setFormData({ ...formData, budget: option })
                                 }}
                                 className={cn(
-                                  "w-full text-left p-3 rounded-lg border-2 text-sm font-medium transition-all",
+                                  "w-full text-left p-3 rounded-lg border-2 text-[15px] font-medium transition-all",
                                   isSelected
                                     ? "border-accent bg-accent/10 text-accent"
                                     : "border-border hover:border-accent/50 text-foreground"
@@ -397,7 +398,7 @@ export function Hero() {
                         <p className="mt-[12px] mb-[20px] rounded-[8px] bg-[#FEF3C7] border-l-4 border-l-[#F59E0B] py-[12px] px-[16px] text-left text-[16px] md:text-[20px] font-medium leading-snug text-[#92400E]">
                           Other bids may have different pricing
                         </p>
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 gap-3">
                         {bidOptions.map((option) => {
                           const isSelected = formData.multipleBids === option
                           return (
@@ -410,7 +411,7 @@ export function Hero() {
                                 setFormData({ ...formData, multipleBids: option })
                               }}
                               className={cn(
-                                "p-3 rounded-lg border-2 text-sm font-medium transition-all",
+                                "p-3 rounded-lg border-2 text-[15px] font-medium transition-all",
                                 isSelected
                                   ? "border-accent bg-accent/10 text-accent"
                                   : "border-border hover:border-accent/50 text-foreground"
@@ -466,7 +467,7 @@ export function Hero() {
                     disabled={!canProceed || isSubmitting}
                     onClick={isLastStep ? handleSubmit : handleNext}
                     className={cn(
-                      "flex-1 h-11 text-base font-semibold bg-accent hover:bg-accent/90 text-accent-foreground",
+                      "flex-1 h-11 px-3 text-[16px] font-semibold bg-accent hover:bg-accent/90 text-accent-foreground",
                       (!canProceed || isSubmitting) && "opacity-70"
                     )}
                   >
