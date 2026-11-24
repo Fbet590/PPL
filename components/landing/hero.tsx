@@ -17,10 +17,10 @@ const projectOptions = ["Turf", "Pavers", "Plants", "Decorative Rock", "Drip Irr
 
 const formSteps = [
   { field: "options", label: "What options would you like for your project?", placeholder: "", type: "options" },
-  { field: "name", label: "What's your name?", placeholder: "Enter your name", type: "text" },
   { field: "budget", label: "What's your approximate budget?", placeholder: "", type: "budget" },
-  { field: "phone", label: "What's your phone number?", placeholder: "Enter your phone number", type: "tel" },
+  { field: "name", label: "What's your name?", placeholder: "Enter your name", type: "text" },
   { field: "email", label: "What's your email?", placeholder: "Enter your email address", type: "email" },
+  { field: "phone", label: "What's your phone number?", placeholder: "Enter your phone number", type: "tel" },
   { field: "multipleBids", label: "Would you like more than one bid for this project?", placeholder: "", type: "choice" },
 ]
 
