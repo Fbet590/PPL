@@ -159,18 +159,12 @@ export function Gallery() {
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">
             Our Work
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-2">
-            See Our Stunning Results
-          </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
-            Explore our recent projects across the Phoenix Valley
-          </p>
         </div>
 
         {/* Slideshow */}
         <div className="max-w-4xl mx-auto">
           <div 
-            className="relative aspect-[16/10] rounded-xl overflow-hidden cursor-pointer group"
+            className="relative aspect-[16/10] overflow-hidden cursor-pointer group"
             onClick={openLightbox}
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
@@ -197,16 +191,6 @@ export function Gallery() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
                 
-                {/* Slide Info */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-primary-foreground">
-                  <span className="text-sm text-accent font-medium uppercase tracking-wider">
-                    {project.category}
-                  </span>
-                  <h3 className="text-2xl font-semibold mt-1">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm opacity-80">{project.location}</p>
-                </div>
               </div>
               )
             })}
@@ -263,7 +247,7 @@ export function Gallery() {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={cn(
-                  "relative flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden transition-all duration-300",
+                  "relative flex-shrink-0 w-24 h-16 overflow-hidden transition-all duration-300",
                   index === currentIndex 
                     ? "ring-2 ring-accent ring-offset-2 ring-offset-muted" 
                     : "opacity-60 hover:opacity-100"
@@ -329,17 +313,6 @@ export function Gallery() {
               sizes="(min-width: 1024px) 1024px, 100vw"
               className="object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 p-6 text-center bg-gradient-to-t from-primary/80 to-transparent">
-              <span className="text-sm text-accent font-medium uppercase tracking-wider">
-                {projects[currentIndex].category}
-              </span>
-              <h3 className="text-2xl font-semibold text-primary-foreground mt-1">
-                {projects[currentIndex].title}
-              </h3>
-              <p className="text-primary-foreground/80">
-                {projects[currentIndex].location}
-              </p>
-            </div>
           </div>
 
           {/* Lightbox Dot Indicators */}
