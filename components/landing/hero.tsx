@@ -225,33 +225,14 @@ export function Hero() {
     <section className="relative">
       {/* Hero Section on a plain white background */}
       <div className="relative min-h-[85vh] flex items-center bg-white pt-20 pb-32 lg:pb-40">
-        <div className="container relative z-10 mx-auto px-4 py-12 lg:py-16">
+        <div className="container relative z-10 mx-auto px-4 pt-[6px] pb-12 lg:py-16">
           <div className="grid lg:grid-cols-5 gap-8 items-center">
             {/* Left Content */}
             <div className="text-black lg:col-span-3">
-              <h1 className="font-[family-name:var(--font-poppins)] text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-balance">
+              <h1 className="font-[family-name:var(--font-manrope)] text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-balance">
                 No More Looking at an Ugly Backyard!{" "}
                 <span className="text-[#FB9109]">Transform it, YOUR way.</span>
               </h1>
-              <p className="mt-6 text-lg md:text-xl opacity-90 leading-relaxed max-w-xl">
-                No obligation - under 14 seconds.
-              </p>
-
-              {/* Stats */}
-              <div className="mt-8 grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-3xl font-bold text-[#FB9109]">15+</div>
-                  <div className="text-xs opacity-80">Years Experience</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#FB9109]">200+</div>
-                  <div className="text-xs opacity-80">Projects Completed</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#FB9109]">5★</div>
-                  <div className="text-xs opacity-80">Google Rating</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -260,23 +241,11 @@ export function Hero() {
       {/* Lead Capture Form - Overlapping */}
       <div className="relative z-20 -mt-24 lg:-mt-32 pb-12">
         <div className="container mx-auto px-4">
-          <div className="bg-card rounded-xl shadow-2xl p-5 md:p-6 max-w-sm mx-auto border-4 border-[#FB9109] overflow-hidden">
+          <div className="bg-card rounded-xl shadow-2xl p-5 pt-0 md:p-6 max-w-sm mx-auto border-4 border-[#FB9109] overflow-hidden">
             {!isSubmitted ? (
               <div className="relative">
                 {/* Form Header (first step only) */}
-                {currentStep === 0 && (
-                  <div className="text-center mb-5">
-                    <p className="font-[family-name:var(--font-poppins)] text-base md:text-lg font-extrabold text-foreground tracking-wide uppercase mb-2">
-                      GET THE BACKYARD MAKE OVER.
-                    </p>
-                    <h2 className="font-[family-name:var(--font-poppins)] text-lg font-bold text-foreground">
-                      <span className="text-[#FB9109]">Not Every Home Qualifies.</span> Yours Might.
-                    </h2>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      Fill out the form below and we'll do the rest!
-                    </p>
-                  </div>
-                )}
+                {currentStep === 0 && <div className="text-center mb-5" />}
 
                 {/* Progress Indicator */}
                 <div className="flex gap-2 mb-4">
