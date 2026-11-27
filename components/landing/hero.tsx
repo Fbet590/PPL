@@ -16,8 +16,8 @@ const badges = [
 const projectOptions = ["Turf", "Pavers", "Plants", "Decorative Rock", "Drip Irrigation", "Pergola"]
 
 const formSteps = [
-  { field: "options", label: "What options would you like for your project?", placeholder: "", type: "options" },
   { field: "budget", label: "What size is your project?", placeholder: "", type: "budget" },
+  { field: "options", label: "What options would you like for your project?", placeholder: "", type: "options" },
   { field: "name", label: "What's your name?", placeholder: "Enter your name", type: "text" },
   { field: "email", label: "What's your email?", placeholder: "Enter your email address", type: "email" },
   { field: "phone", label: "What's your phone number?", placeholder: "Enter your phone number", type: "tel" },
@@ -352,7 +352,7 @@ export function Hero() {
                                 })
                               }}
                               className={cn(
-                                "min-w-0 px-2 py-3 rounded-lg border-2 text-[15px] font-medium transition-all",
+                                "min-w-0 px-2 py-3 rounded-lg border-2 text-[18px] font-medium transition-all",
                                 isSelected
                                   ? "border-accent bg-accent/10 text-accent"
                                   : "border-border hover:border-accent/50 text-foreground"
@@ -411,7 +411,7 @@ export function Hero() {
                                 setFormData({ ...formData, multipleBids: option })
                               }}
                               className={cn(
-                                "p-3 rounded-lg border-2 text-[15px] font-medium transition-all",
+                                "p-3 rounded-lg border-2 text-[18px] font-medium transition-all",
                                 isSelected
                                   ? "border-accent bg-accent/10 text-accent"
                                   : "border-border hover:border-accent/50 text-foreground"
