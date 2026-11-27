@@ -5,6 +5,7 @@ import { CheckCircle2, Shield, Award, FileCheck, ArrowRight, ArrowLeft } from "l
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
+import { HeroCollage } from "@/components/landing/hero-collage"
 
 const badges = [
   { icon: Shield, label: "Licensed" },
@@ -233,6 +234,7 @@ export function Hero() {
                 No More Looking at an Ugly Backyard!{" "}
                 <span className="text-[#FB9109]">Transform it, YOUR way.</span>
               </h1>
+              <HeroCollage />
             </div>
           </div>
         </div>
