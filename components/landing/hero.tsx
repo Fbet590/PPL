@@ -233,9 +233,6 @@ export function Hero() {
                 No More Looking at an Ugly Backyard!{" "}
                 <span className="text-[#FB9109]">Transform it, YOUR way.</span>
               </h1>
-              <p className="mt-6 max-w-xl font-[family-name:var(--font-poppins)] text-[16px] font-medium leading-[1.2] opacity-90">
-                Tell us what you&apos;re looking for. We&apos;ll reach out today!
-              </p>
             </div>
           </div>
         </div>
