@@ -233,25 +233,9 @@ export function Hero() {
                 No More Looking at an Ugly Backyard!{" "}
                 <span className="text-[#FB9109]">Transform it, YOUR way.</span>
               </h1>
-              <p className="mt-6 text-lg md:text-xl opacity-90 leading-relaxed max-w-xl">
-                No obligation - under 14 seconds.
+              <p className="mt-6 max-w-xl font-[family-name:var(--font-poppins)] text-[16px] font-medium leading-[1.2] opacity-90">
+                Tell us what you&apos;re looking for. We&apos;ll reach out today!
               </p>
-
-              {/* Stats */}
-              <div className="mt-8 grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-3xl font-bold text-[#FB9109]">15+</div>
-                  <div className="text-xs opacity-80">Years Experience</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#FB9109]">200+</div>
-                  <div className="text-xs opacity-80">Projects Completed</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#FB9109]">5★</div>
-                  <div className="text-xs opacity-80">Google Rating</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
