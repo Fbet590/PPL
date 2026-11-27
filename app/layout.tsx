@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Montserrat, Playfair_Display, Poppins } from 'next/font/google'
+import { Inter, Manrope, Montserrat, Playfair_Display, Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
@@ -7,6 +7,12 @@ import './globals.css'
 const inter = Inter({
   subsets: ["latin"],
   variable: '--font-inter'
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["800"],
+  variable: '--font-manrope'
 });
 
 const montserrat = Montserrat({ 
@@ -55,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${montserrat.variable} ${playfair.variable} ${poppins.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${manrope.variable} ${montserrat.variable} ${playfair.variable} ${poppins.variable} font-sans antialiased`}>
         {children}
         {/* Facebook Pixel */}
         <Script id="facebook-pixel" strategy="afterInteractive">
