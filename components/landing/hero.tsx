@@ -244,23 +244,11 @@ export function Hero() {
       {/* Lead Capture Form - Overlapping */}
       <div className="relative z-20 -mt-24 lg:-mt-32 pb-12">
         <div className="container mx-auto px-4">
-          <div className="bg-card rounded-xl shadow-2xl p-5 md:p-6 max-w-sm mx-auto border-4 border-[#FB9109] overflow-hidden">
+          <div className="bg-card rounded-xl shadow-2xl p-5 pt-0 md:p-6 max-w-sm mx-auto border-4 border-[#FB9109] overflow-hidden">
             {!isSubmitted ? (
               <div className="relative">
                 {/* Form Header (first step only) */}
-                {currentStep === 0 && (
-                  <div className="text-center mb-5">
-                    <p className="font-[family-name:var(--font-poppins)] text-base md:text-lg font-extrabold text-foreground tracking-wide uppercase mb-2">
-                      GET THE BACKYARD MAKE OVER.
-                    </p>
-                    <h2 className="font-[family-name:var(--font-poppins)] text-lg font-bold text-foreground">
-                      <span className="text-[#FB9109]">Not Every Home Qualifies.</span> Yours Might.
-                    </h2>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      Fill out the form below and we'll do the rest!
-                    </p>
-                  </div>
-                )}
+                {currentStep === 0 && <div className="text-center mb-5" />}
 
                 {/* Progress Indicator */}
                 <div className="flex gap-2 mb-4">
