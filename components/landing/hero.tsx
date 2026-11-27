@@ -226,7 +226,7 @@ export function Hero() {
     <section className="relative">
       {/* Hero Section on a plain white background */}
       <div className="relative min-h-[85vh] flex items-center bg-white pt-20 pb-32 lg:pb-40">
-        <div className="container relative z-10 mx-auto px-4 pt-[23px] pb-[23px] lg:py-16">
+        <div className="container relative z-10 mx-auto px-4 pt-[56px] pb-[23px] lg:py-16">
           <div className="grid lg:grid-cols-5 gap-8 items-center">
             {/* Left Content */}
             <div className="text-black lg:col-span-3">
@@ -243,7 +243,7 @@ export function Hero() {
       {/* Lead Capture Form - Overlapping */}
       <div className="relative z-20 -mt-24 lg:-mt-32 pb-12">
         <div className="container mx-auto px-4">
-          <div className="bg-card rounded-xl shadow-2xl p-5 pt-0 md:p-6 max-w-sm mx-auto border-4 border-[#FB9109] overflow-hidden">
+          <div className="bg-card rounded-xl shadow-2xl p-5 pt-[38px] md:p-6 max-w-sm mx-auto border-4 border-[#FB9109] overflow-hidden">
             {!isSubmitted ? (
               <div className="relative">
                 {/* Form Header (first step only) */}
