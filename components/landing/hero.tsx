@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import { CheckCircle2, Shield, Award, FileCheck, ArrowRight, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -224,30 +223,18 @@ export function Hero() {
 
   return (
     <section className="relative">
-      {/* Hero Section with Background */}
-      <div className="relative min-h-[85vh] flex items-center pt-20 pb-32 lg:pb-40">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero-patio.webp"
-            alt="Luxury Arizona backyard with custom hardscaping"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
-        </div>
-
+      {/* Hero Section on a plain white background */}
+      <div className="relative min-h-[85vh] flex items-center bg-white pt-20 pb-32 lg:pb-40">
         <div className="container relative z-10 mx-auto px-4 py-12 lg:py-16">
           <div className="grid lg:grid-cols-5 gap-8 items-center">
             {/* Left Content */}
-            <div className="text-primary-foreground lg:col-span-3">
+            <div className="text-black lg:col-span-3">
               <h1 className="font-[family-name:var(--font-poppins)] text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-balance">
                 No More Looking at an Ugly Backyard!{" "}
                 <span className="text-[#FB9109]">Transform it, YOUR way.</span>
               </h1>
               <p className="mt-6 text-lg md:text-xl opacity-90 leading-relaxed max-w-xl">
-                No more, no less. See if your project fits the scope.
+                No obligation - under 14 seconds.
               </p>
 
               {/* Stats */}
