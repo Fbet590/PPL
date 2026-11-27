@@ -225,7 +225,7 @@ export function Hero() {
     <section className="relative">
       {/* Hero Section on a plain white background */}
       <div className="relative min-h-[85vh] flex items-center bg-white pt-20 pb-32 lg:pb-40">
-        <div className="container relative z-10 mx-auto px-4 pt-[6px] pb-12 lg:py-16">
+        <div className="container relative z-10 mx-auto px-4 pt-[44px] pb-[76px] lg:py-16">
           <div className="grid lg:grid-cols-5 gap-8 items-center">
             {/* Left Content */}
             <div className="text-black lg:col-span-3">
