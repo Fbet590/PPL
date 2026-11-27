@@ -17,7 +17,7 @@ const projectOptions = ["Turf", "Pavers", "Plants", "Decorative Rock", "Drip Irr
 
 const formSteps = [
   { field: "options", label: "What options would you like for your project?", placeholder: "", type: "options" },
-  { field: "budget", label: "What's your approximate budget?", placeholder: "", type: "budget" },
+  { field: "budget", label: "What size is your project?", placeholder: "", type: "budget" },
   { field: "name", label: "What's your name?", placeholder: "Enter your name", type: "text" },
   { field: "email", label: "What's your email?", placeholder: "Enter your email address", type: "email" },
   { field: "phone", label: "What's your phone number?", placeholder: "Enter your phone number", type: "tel" },
@@ -381,7 +381,7 @@ export function Hero() {
                                   setFormData({ ...formData, budget: option })
                                 }}
                                 className={cn(
-                                  "w-full text-left p-3 rounded-lg border-2 text-[15px] font-medium transition-all",
+                                  "w-full text-left p-3 rounded-lg border-2 text-[18px] font-medium transition-all",
                                   isSelected
                                     ? "border-accent bg-accent/10 text-accent"
                                     : "border-border hover:border-accent/50 text-foreground"
