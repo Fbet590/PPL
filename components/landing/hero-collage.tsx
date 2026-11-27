@@ -18,8 +18,8 @@ export function HeroCollage() {
 
       </div>
 
-      {/* Bottom image: centered and pushed down so the floating photo never covers it */}
-      <div className="relative z-0 mx-auto mt-[12%] aspect-[3/2] w-3/4 overflow-hidden shadow-md">
+      {/* Bottom image: centered, layered on top so it slightly overlaps the top image */}
+      <div className="relative z-20 mx-auto -mt-[5%] aspect-[3/2] w-3/4 overflow-hidden shadow-xl">
         <Image
           src="/images/collage-3.webp"
           alt="Pergola patio with an outdoor kitchen and lounge seating"
