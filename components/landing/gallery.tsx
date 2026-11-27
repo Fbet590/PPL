@@ -153,10 +153,10 @@ export function Gallery() {
   }, [lightboxOpen, goNext, goPrev])
 
   return (
-    <section id="gallery" className="py-20 bg-muted">
+    <section id="gallery" className="pt-[26px] pb-20 text-[24px] bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+          <span className="text-accent font-semibold text-[24px] uppercase tracking-wider">
             Our Work
           </span>
         </div>
