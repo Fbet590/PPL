@@ -3,7 +3,7 @@ import Image from "next/image"
 export function HeroCollage() {
   return (
     <div className="relative mt-8 w-full max-w-xl">
-      {/* Top image: large base photo. The small floating photo is anchored to its bottom edge. */}
+      {/* Top image: large base photo. */}
       <div className="relative z-10 aspect-[4/3] w-full">
         <div className="relative h-full w-full overflow-hidden shadow-lg">
           <Image
@@ -16,16 +16,6 @@ export function HeroCollage() {
           />
         </div>
 
-        {/* Middle image: floats on top, straddling the bottom edge of the top image */}
-        <div className="absolute right-[4%] top-full z-20 aspect-video w-[42%] -translate-y-1/2 overflow-hidden border-4 border-white shadow-xl">
-          <Image
-            src="/images/collage-1.webp"
-            alt="Backyard putting green with a modern pergola and paver patio"
-            fill
-            sizes="(min-width: 1024px) 240px, 42vw"
-            className="object-cover"
-          />
-        </div>
       </div>
 
       {/* Bottom image: centered and pushed down so the floating photo never covers it */}
