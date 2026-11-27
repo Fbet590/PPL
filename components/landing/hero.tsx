@@ -226,12 +226,12 @@ export function Hero() {
     <section className="relative">
       {/* Hero Section on a plain white background */}
       <div className="relative min-h-[85vh] flex items-center bg-white pt-20 pb-32 lg:pb-40">
-        <div className="container relative z-10 mx-auto px-4 pt-[44px] pb-[76px] lg:py-16">
+        <div className="container relative z-10 mx-auto px-4 pt-[23px] pb-[23px] lg:py-16">
           <div className="grid lg:grid-cols-5 gap-8 items-center">
             {/* Left Content */}
             <div className="text-black lg:col-span-3">
               <h1 className="font-[family-name:var(--font-manrope)] text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-balance">
-                No More Looking at an Ugly Backyard!{" "}
+                No More Ugly Backyard!{" "}
                 <span className="text-[#FB9109]">Transform it, YOUR way.</span>
               </h1>
               <HeroCollage />
